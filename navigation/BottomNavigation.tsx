@@ -5,7 +5,7 @@ import HomeScreen from "../screens/app/home"
 import SearchScreen from "../screens/app/search"
 import LibraryScreen from "../screens/app/library"
 import { Ionicons } from "@expo/vector-icons";
-import { BlurView } from "expo-blur";
+import { LinearGradient } from 'expo-linear-gradient';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -37,6 +37,13 @@ const BottomNavigation = () => {
           tabBarItemStyle: {
             marginBottom: 15,
           },
+          tabBarBackground: () => (
+            <LinearGradient
+              // Background Linear Gradient
+              colors={["#4c669f", "#3b5998", "#192f6a"]}
+              style={{ width: "100%", height: "100%" }}
+            />
+          ),
         }}
       >
         <Tab.Screen

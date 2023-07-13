@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 interface Props {
@@ -7,9 +7,9 @@ interface Props {
 
 const Chip = ({text}:Props) => {
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container}>
       <Text style={styles.textStyle}>{text}</Text>
-    </View>
+    </TouchableOpacity>
   )
 }
 
