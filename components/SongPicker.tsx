@@ -5,8 +5,14 @@ import { Feather } from "@expo/vector-icons";
 
 const SongPicker = () => {
   return (
-    <TouchableOpacity>
-      <View style={{ flexDirection: "row", alignItems: "center", marginVertical: 8 }}>
+    <TouchableOpacity style={{ backgroundColor: "black" }}>
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          marginVertical: 8,
+        }}
+      >
         <Image
           style={styles.image}
           source={require("../assets/playlist.png")}
@@ -17,7 +23,14 @@ const SongPicker = () => {
           </Text>
           <View style={{ flexDirection: "row", marginTop: 2 }}>
             <Text style={styles.lyrics}>LYRICS</Text>
-            <Text style={{ color: "#fff", fontWeight: "bold", fontSize: 12, marginLeft: 6 }}>
+            <Text
+              style={{
+                color: "#fff",
+                fontWeight: "bold",
+                fontSize: 12,
+                marginLeft: 6,
+              }}
+            >
               Harry Styles
             </Text>
           </View>

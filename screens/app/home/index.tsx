@@ -1,25 +1,31 @@
 import { StyleSheet, Text, View, TouchableOpacity, ScrollView, FlatList, Platform } from 'react-native'
-import React from 'react'
+import React,{useContext} from 'react'
 import SaferAreaView from '../../../components/SaferAreaView'
 import { Ionicons } from "@expo/vector-icons";
 import Chip from '../../../components/Chip';
 import PlaylistChip from '../../../components/PlaylistChip';
 import PlaylistCover from '../../../components/PlaylistCover';
 import { useNavigation } from "@react-navigation/native";
+import { AuthContext } from '../../../context/auth-context';
 
 
 const Home = () => {
     const navigation = useNavigation();
+    const authCtx = useContext(AuthContext)
 
   return (
-    <SaferAreaView style={{ flex: 1, backgroundColor: "#121212" }}>
+    <SaferAreaView
+      style={{ flex: 1, backgroundColor: "#121212", paddingHorizontal: 16 }}
+    >
       <ScrollView style={styles.container}>
         <View style={{ height: 32 }} />
         <View style={styles.nav}>
           <Text style={{ color: "#fff", fontSize: 24, fontWeight: "bold" }}>
             Good evening
           </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={()=>{
+            authCtx.logout()
+          }}>
             <Ionicons name="settings-outline" size={24} color="#fff" />
           </TouchableOpacity>
         </View>

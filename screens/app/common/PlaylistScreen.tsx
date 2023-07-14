@@ -12,9 +12,10 @@ import SongPicker from '../../../components/SongPicker';
 const PlaylistScreen = () => {
   const navigation = useNavigation();
   return (
-    <LinearGradient colors={["#4FC0D0", "black"]} style={styles.container}>
-      <SaferAreaView style={{ flex: 1 }}>
-        <ScrollView showsVerticalScrollIndicator={false}>
+    // <LinearGradient colors={["#4FC0D0", "black"]} style={styles.container}>
+    <SaferAreaView style={{ flex: 1, backgroundColor: "#121212" }}>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <LinearGradient colors={["#4FC0D0", "black"]}>
           <View style={styles.head}>
             <TouchableOpacity
               style={styles.backButton}
@@ -32,12 +33,25 @@ const PlaylistScreen = () => {
               A mega mix of 75 favorites from the last few years!
             </Text>
           </View>
-          <View style={{ flexDirection: "row", gap: 6, marginVertical: 8 }}>
+          <View
+            style={{
+              flexDirection: "row",
+              gap: 6,
+              marginVertical: 8,
+              paddingHorizontal: 16,
+            }}
+          >
             <Entypo name="spotify" size={24} color="black" />
             <Text style={{ color: "#fff", fontWeight: "bold" }}>Spotify</Text>
           </View>
           <View>
-            <Text style={{ fontWeight: "bold", color: "#fff" }}>
+            <Text
+              style={{
+                fontWeight: "bold",
+                color: "#fff",
+                paddingHorizontal: 16,
+              }}
+            >
               7,340,688 likes . 4h 1min
             </Text>
           </View>
@@ -47,6 +61,7 @@ const PlaylistScreen = () => {
               justifyContent: "space-between",
               alignItems: "center",
               marginTop: 16,
+              paddingHorizontal: 16,
             }}
           >
             <View
@@ -63,20 +78,22 @@ const PlaylistScreen = () => {
               <AntDesign name="play" size={34} color="#fff" />
             </View>
           </View>
-          <View>
-            <SongPicker />
-            <SongPicker />
-            <SongPicker />
-            <SongPicker />
-            <SongPicker />
-            <SongPicker />
-            <SongPicker />
-            <SongPicker />
-          </View>
-          {Platform.OS === "android" && <View style={{ height: 70 }} />}
-        </ScrollView>
-      </SaferAreaView>
-    </LinearGradient>
+        </LinearGradient>
+
+        <View style={{ paddingHorizontal: 16, backgroundColor: "black" }}>
+          <SongPicker />
+          <SongPicker />
+          <SongPicker />
+          <SongPicker />
+          <SongPicker />
+          <SongPicker />
+          <SongPicker />
+          <SongPicker />
+        </View>
+        {Platform.OS === "android" && <View style={{ height: 70 }} />}
+      </ScrollView>
+    </SaferAreaView>
+    // </LinearGradient>
   );
 }
 
@@ -99,11 +116,12 @@ const styles = StyleSheet.create({
   head: {
     alignItems: "center",
     paddingTop: 20,
+    paddingHorizontal: 16,
   },
-  discription:{
+  discription: {
     color: "#fff",
     fontSize: 12,
     fontWeight: "bold",
-    marginTop: 18
-  }
+    marginTop: 18,
+  },
 });
