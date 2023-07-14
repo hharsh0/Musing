@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React,{useState} from 'react'
 import SaferAreaView from '../../../components/SaferAreaView'
 import { LinearGradient } from 'expo-linear-gradient'
@@ -9,10 +9,12 @@ import { AntDesign } from '@expo/vector-icons';
 import { Slider } from "@react-native-assets/slider";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Foundation } from "@expo/vector-icons";
+import { useNavigation } from '@react-navigation/native';
 
 
 const MusicPlayer = () => {
    const [seekerValue, setSeekerValue] = useState(0);
+    const navigation = useNavigation();
 
    const handleSeekerChange = (value:any) => {
      setSeekerValue(value);
@@ -29,7 +31,11 @@ const MusicPlayer = () => {
             paddingTop: 18,
           }}
         >
-          <Entypo name="chevron-thin-down" size={24} color="#fff" />
+          <TouchableOpacity onPress={()=>{
+            navigation.goBack();
+          }}>
+            <Entypo name="chevron-thin-down" size={24} color="#fff" />
+          </TouchableOpacity>
           <View>
             <Text style={{ textAlign: "center", color: "#fff", fontSize: 10 }}>
               PLAYING FROM PLAYLIST

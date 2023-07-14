@@ -17,15 +17,17 @@ const Home = () => {
     <SaferAreaView
       style={{ flex: 1, backgroundColor: "#121212", paddingHorizontal: 16 }}
     >
-      <ScrollView style={styles.container}>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
         <View style={{ height: 32 }} />
         <View style={styles.nav}>
           <Text style={{ color: "#fff", fontSize: 24, fontWeight: "bold" }}>
             Good evening
           </Text>
-          <TouchableOpacity onPress={()=>{
-            authCtx.logout()
-          }}>
+          <TouchableOpacity
+            onPress={() => {
+              authCtx.logout();
+            }}
+          >
             <Ionicons name="settings-outline" size={24} color="#fff" />
           </TouchableOpacity>
         </View>

@@ -3,6 +3,8 @@ import React from 'react'
 import SaferAreaView from '../../../components/SaferAreaView'
 import { Ionicons } from "@expo/vector-icons";
 import Chip from '../../../components/Chip';
+import { FontAwesome } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 
 const Library = () => {
   return (
@@ -31,6 +33,20 @@ const Library = () => {
         <Chip text="Playlists" />
         <Chip text="Albums" />
         <Chip text="Artists" />
+      </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginTop: 24,
+          alignItems: "center",
+        }}
+      >
+        <View style={{ flexDirection: "row", gap: 12, alignItems: "center" }}>
+          <FontAwesome name="unsorted" size={16} color="#fff" />
+          <Text style={{ color: "#fff", fontSize: 12 }}>Recents</Text>
+        </View>
+        <Feather name="more-vertical" size={16} color="#fff" />
       </View>
     </SaferAreaView>
   );

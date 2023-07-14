@@ -19,7 +19,7 @@ interface tabIcon {
 const MainStack = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreen} options={{ headerShown: false }} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Playlist" component={PlaylistScreen} options={{ headerShown: false }} />
     </Stack.Navigator>
   )
@@ -29,7 +29,7 @@ const SearchStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Search"
+        name="SearchScreen"
         component={SearchScreen}
         options={{ headerShown: false }}
       />
@@ -41,7 +41,7 @@ const LibraryStack = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Library"
+        name="LibraryScreen"
         component={LibraryScreen}
         options={{ headerShown: false }}
       />
@@ -85,7 +85,7 @@ const BottomNavigation = () => {
         }}
       >
         <Tab.Screen
-          name="Main"
+          name="Home"
           component={MainStack}
           options={{
             tabBarIcon: ({ color, size }: tabIcon) => (
@@ -96,7 +96,7 @@ const BottomNavigation = () => {
           }}
         />
         <Tab.Screen
-          name="SearchTab"
+          name="Search"
           component={SearchStack}
           options={{
             tabBarIcon: ({ color, size }: tabIcon) => (
@@ -107,7 +107,7 @@ const BottomNavigation = () => {
           }}
         />
         <Tab.Screen
-          name="LibraryTab"
+          name="Library"
           component={LibraryStack}
           options={{
             tabBarIcon: ({ color, size }: tabIcon) => (
