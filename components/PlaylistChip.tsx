@@ -16,9 +16,9 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: "#2A2A2A",
     flexDirection: "row",
-    borderRadius: 8,
+    borderRadius: 6,
     alignItems: "center",
-    width: 150,
+    width: 160,
   },
   image: {
     width: 60,

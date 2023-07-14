@@ -1,14 +1,18 @@
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView, FlatList } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView, FlatList, Platform } from 'react-native'
 import React from 'react'
 import SaferAreaView from '../../../components/SaferAreaView'
 import { Ionicons } from "@expo/vector-icons";
 import Chip from '../../../components/Chip';
 import PlaylistChip from '../../../components/PlaylistChip';
 import PlaylistCover from '../../../components/PlaylistCover';
+import { useNavigation } from "@react-navigation/native";
+
 
 const Home = () => {
+    const navigation = useNavigation();
+
   return (
-    <SaferAreaView style={{ flex: 1 }}>
+    <SaferAreaView style={{ flex: 1, backgroundColor: "#121212" }}>
       <ScrollView style={styles.container}>
         <View style={{ height: 32 }} />
         <View style={styles.nav}>
@@ -64,6 +68,7 @@ const Home = () => {
             <PlaylistCover />
           </ScrollView>
         </View>
+        {Platform.OS === "android" && <View style={{ height: 70 }} />}
       </ScrollView>
     </SaferAreaView>
   );
@@ -85,8 +90,9 @@ const styles = StyleSheet.create({
     marginTop: 24,
     flexWrap: "wrap",
     gap: 8,
-    justifyContent: "center",
+    justifyContent: "space-between",
     alignItems: "center",
+    // backgroundColor: "red",
   },
   sectionHeading:{
     color: "#ffffff",

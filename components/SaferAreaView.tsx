@@ -15,7 +15,7 @@ export default SaferAreaView
 
 const styles = StyleSheet.create({
     container:{
-        backgroundColor: "#121212",
+        // backgroundColor: "#121212",
         paddingHorizontal: 16,
     }
 })

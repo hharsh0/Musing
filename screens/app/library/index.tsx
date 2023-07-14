@@ -6,7 +6,7 @@ import Chip from '../../../components/Chip';
 
 const Library = () => {
   return (
-    <SaferAreaView style={{ flex: 1 }}>
+    <SaferAreaView style={{ flex: 1, backgroundColor: "#121212" }}>
       <View style={{ height: 32 }} />
       <View
         style={{

@@ -5,7 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 const Search = () => {
   return (
-    <SaferAreaView style={{ flex: 1 }}>
+    <SaferAreaView style={{ flex: 1, backgroundColor: "#121212" }}>
       <View style={{ height: 32 }} />
       <Text style={styles.mainText}>Search</Text>
       <View style={styles.inputContainer}>
