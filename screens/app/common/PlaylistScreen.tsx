@@ -90,7 +90,7 @@ const PlaylistScreen = () => {
           <SongPicker />
           <SongPicker />
         </View>
-        {Platform.OS === "android" && <View style={{ height: 70 }} />}
+        {Platform.OS === "android" && <View style={{ height: 70, backgroundColor:"black" }} />}
       </ScrollView>
     </SaferAreaView>
     // </LinearGradient>

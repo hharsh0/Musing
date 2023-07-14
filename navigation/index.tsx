@@ -3,6 +3,7 @@ import BottomNavigation from './BottomNavigation'
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LoginScreen from '../screens/auth/LoginScreen';
 import { AuthContext } from '../context/auth-context';
+import MusicPlayer from '../screens/app/common/MusicPlayer';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,13 +18,22 @@ const AuthStack = ()=>{
 }
 
 const AppStack = ()=>{
-  return(
+  return (
     <>
-    <Stack.Navigator>
-        <Stack.Screen name="BottomNavigation" component={BottomNavigation} options={{ headerShown: false }} />
-    </Stack.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen
+          name="BottomNavigation"
+          component={BottomNavigation}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="MusicPlayer"
+          component={MusicPlayer}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
     </>
-  )
+  );
 }
 
 const Navigation = () => {

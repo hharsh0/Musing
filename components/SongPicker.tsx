@@ -1,11 +1,21 @@
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Feather } from "@expo/vector-icons";
+import {
+  useNavigation,
+  NavigationProp,
+  ParamListBase,
+} from "@react-navigation/native";
 
 
 const SongPicker = () => {
+
+  const navigation = useNavigation<NavigationProp<ParamListBase>>();
+  
   return (
-    <TouchableOpacity style={{ backgroundColor: "black" }}>
+    <TouchableOpacity onPress={()=>{
+      navigation.navigate("MusicPlayer")
+    }} style={{ backgroundColor: "black" }}>
       <View
         style={{
           flexDirection: "row",
